@@ -23,8 +23,12 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.focusable
 import androidx.compose.foundation.gestures.animateScrollBy
+import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.ui.input.pointer.PointerEventPass
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -503,6 +507,12 @@ fun HeroSpeedometerRingSection(
                 color = borderColor,
                 shape = RoundedCornerShape(24.dp)
             )
+            .pointerInput(onCardClick) {
+                awaitEachGesture {
+                    awaitFirstDown(pass = PointerEventPass.Initial)
+                    onCardClick()
+                }
+            }
             .clickable { onCardClick() }
             .testTag("hero_speedometer_card")
     ) {
@@ -720,6 +730,12 @@ fun FocusableCardWrapper(
                 color = borderColor,
                 shape = RoundedCornerShape(20.dp)
             )
+            .pointerInput(onCardClick) {
+                awaitEachGesture {
+                    awaitFirstDown(pass = PointerEventPass.Initial)
+                    onCardClick()
+                }
+            }
             .clickable { onCardClick() }
             .testTag("card_wrapper_$cardIndex")
     ) {
