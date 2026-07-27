@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Speedometer arc -->
+    <path
+        android:pathData="M 30,68 A 32,32 0 1,1 78,68"
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <!-- Pulse lightning bolt -->
+    <path
+        android:pathData="M 57,32 L 44,52 L 53,52 L 49,72 L 66,48 L 56,48 Z"
+        android:fillColor="#00FF87" />
+    <!-- Gauge needle accent -->
+    <path
+        android:pathData="M 54,54 L 68,38"
+        android:strokeColor="#FF2A6D"
+        android:strokeWidth="3"
+        android:strokeLineCap="round" />
+</vector>

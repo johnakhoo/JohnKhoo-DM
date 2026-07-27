@@ -1,0 +1,100 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="360dp"
+    android:height="200dp"
+    android:viewportWidth="360"
+    android:viewportHeight="200">
+    
+    <!-- Background Glow -->
+    <path
+        android:pathData="M20,100 Q180,30 340,100 Q180,170 20,100 Z"
+        android:fillColor="#1000E5FF"/>
+        
+    <!-- Ground / Horizon Line -->
+    <path
+        android:pathData="M0,165 L360,165"
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="1.5"
+        android:strokeAlpha="0.5"/>
+        
+    <path
+        android:pathData="M40,172 L320,172"
+        android:strokeColor="#80D8FF"
+        android:strokeWidth="1"
+        android:strokeAlpha="0.3"/>
+
+    <!-- Honda Prologue EV Silhouette Body -->
+    <!-- Sleek All-Electric SUV Profile -->
+    <path
+        android:pathData="M 30,158
+                          C 35,140 55,128 75,125
+                          C 90,122 110,118 135,100
+                          C 155,85 190,82 230,85
+                          C 260,88 285,100 305,120
+                          C 320,135 330,145 335,158
+                          Z"
+        android:fillColor="#1E2838"
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="2"/>
+
+    <!-- Roofline Accent (Cyan Lightstrip) -->
+    <path
+        android:pathData="M 120,103 C 150,88 190,85 235,88 C 265,91 285,103 300,120"
+        android:strokeColor="#A7F3D0"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"/>
+
+    <!-- Cabin / Window Tint -->
+    <path
+        android:pathData="M 130,102 C 155,88 190,87 228,89 C 255,92 272,102 285,118 L 130,118 Z"
+        android:fillColor="#0A121E"
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="1"
+        android:strokeAlpha="0.6"/>
+
+    <!-- Front LED Light Bar (Honda Prologue Signature Light) -->
+    <path
+        android:pathData="M 312,128 L 332,136 L 315,140"
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"/>
+
+    <!-- Rear LED Light Bar -->
+    <path
+        android:pathData="M 32,142 L 50,132"
+        android:strokeColor="#FF5252"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"/>
+
+    <!-- Front Wheel Assembly -->
+    <path
+        android:pathData="M 270,158 A 22,22 0 1,0 270,158.1"
+        android:fillColor="#0F172A"
+        android:strokeColor="#A7F3D0"
+        android:strokeWidth="2.5"/>
+    <path
+        android:pathData="M 270,158 A 12,12 0 1,0 270,158.1"
+        android:fillColor="#1E293B"
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="1.5"/>
+
+    <!-- Rear Wheel Assembly -->
+    <path
+        android:pathData="M 85,158 A 22,22 0 1,0 85,158.1"
+        android:fillColor="#0F172A"
+        android:strokeColor="#A7F3D0"
+        android:strokeWidth="2.5"/>
+    <path
+        android:pathData="M 85,158 A 12,12 0 1,0 85,158.1"
+        android:fillColor="#1E293B"
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="1.5"/>
+
+    <!-- Aerodynamic Character Line -->
+    <path
+        android:pathData="M 80,138 Q 180,140 310,142"
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="1.5"
+        android:strokeAlpha="0.7"/>
+</vector>

@@ -1,0 +1,6 @@
+{
+  "name": "John Khoo for DM",
+  "description": "Connected vehicle companion app designed for EV and two-wheeler dashboard telematics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
