@@ -169,7 +169,7 @@ class DriveViewModel(application: Application) : AndroidViewModel(application) {
                 val energyKwh = ((state.tripDistanceKm * state.avgEfficiencyWhKm) / 1000.0 * 10).roundToInt() / 10.0
                 repository.addLog(
                     DriveLog(
-                        title = "PulseDrive Session #${(10..99).random()}",
+                        title = "JohnKhooForDM Session #${(10..99).random()}",
                         distanceKm = state.tripDistanceKm,
                         avgSpeedKmh = state.speedKmh.coerceAtLeast(32),
                         energyUsedKwh = energyKwh,

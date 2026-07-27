@@ -10,7 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.ui.GlanceableDriveScreen
-import com.example.ui.theme.PulseDriveEVTheme
+import com.example.ui.theme.JohnKhooForDMTheme
 import com.example.viewmodel.DriveViewModel
 
 class MainActivity : ComponentActivity() {
@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            PulseDriveEVTheme {
+            JohnKhooForDMTheme {
                 val driveViewModel: DriveViewModel = viewModel()
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     GlanceableDriveScreen(

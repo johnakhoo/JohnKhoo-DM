@@ -24,7 +24,7 @@ private val DarkColorScheme = darkColorScheme(
 )
 
 @Composable
-fun PulseDriveEVTheme(
+fun JohnKhooForDMTheme(
     content: @Composable () -> Unit
 ) {
     MaterialTheme(
