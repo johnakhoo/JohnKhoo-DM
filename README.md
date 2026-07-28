@@ -4,15 +4,6 @@ A modern, connected electric vehicle (EV) companion Android application built wi
 
 ---
 
-## 📷 Feature Previews & Screenshots
-
-| 3D Interactive Canvas & Lighting | Telematics & Vehicle Dashboard | Drive Logs & Analytics |
-| :---: | :---: | :---: |
-| ![3D Vehicle Canvas](docs/screenshots/3d_vehicle_canvas.png) | ![Telematics Dashboard](docs/screenshots/telematics_dashboard.png) | ![Drive Logs](docs/screenshots/drive_logs.png) |
-| *360° Orbit, Lighting Environments & Headlight Toggles* | *Battery SoC, Range, Drive Modes & TPMS* | *Room Database Trip History & kWh Efficiency* |
-
----
-
 ## 🌟 Key Features
 
 ### 🚘 Interactive 3D Vehicle Canvas
