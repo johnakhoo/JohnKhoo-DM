@@ -1,23 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Speedometer arc -->
+
+    <!-- "JK DM" Monogram Text (Well-spaced kerning & centered inside 66dp safe circle) -->
+    <!-- 'J' -->
     <path
-        android:pathData="M 30,68 A 32,32 0 1,1 78,68"
+        android:pathData="M 32,33 L 38,33 M 36,33 L 36,41 A 3.5,3.5 0 0,1 29,41"
         android:strokeColor="#00E5FF"
-        android:strokeWidth="6"
+        android:strokeWidth="2.8"
         android:strokeLineCap="round"
         android:fillColor="#00000000" />
-    <!-- Pulse lightning bolt -->
+
+    <!-- 'K' -->
     <path
-        android:pathData="M 57,32 L 44,52 L 53,52 L 49,72 L 66,48 L 56,48 Z"
-        android:fillColor="#00FF87" />
-    <!-- Gauge needle accent -->
+        android:pathData="M 42,33 L 42,45 M 49,33 L 42,39 L 49,45"
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="2.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000" />
+
+    <!-- 'D' -->
     <path
-        android:pathData="M 54,54 L 68,38"
+        android:pathData="M 57,33 L 57,45 M 57,33 C 66,33 66,45 57,45"
+        android:strokeColor="#00FF87"
+        android:strokeWidth="2.8"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- 'M' -->
+    <path
+        android:pathData="M 69,45 L 69,33 L 74,40 L 79,33 L 79,45"
+        android:strokeColor="#00FF87"
+        android:strokeWidth="2.8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000" />
+
+    <!-- Sleek EV Car Silhouette (Bottom Section - Fully inside 66dp safe circle) -->
+    <!-- Car body outline -->
+    <path
+        android:pathData="M 29,64 C 35,55 51,52 65,58 L 76,61 C 79,62 79,65 76,67 L 28,67 C 25,67 25,65 29,64 Z"
+        android:fillColor="#132238"
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- Windshield -->
+    <path
+        android:pathData="M 39,61 C 45,55 54,55 61,60 Z"
+        android:fillColor="#00E5FF"
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="1" />
+
+    <!-- Rear Wheel -->
+    <path
+        android:pathData="M 35,64 A 4,4 0 1,1 35,72 A 4,4 0 1,1 35,64"
+        android:fillColor="#00E5FF" />
+    <path
+        android:pathData="M 35,66 A 2,2 0 1,1 35,70 A 2,2 0 1,1 35,66"
+        android:fillColor="#0B0F19" />
+
+    <!-- Front Wheel -->
+    <path
+        android:pathData="M 68,64 A 4,4 0 1,1 68,72 A 4,4 0 1,1 68,64"
+        android:fillColor="#00E5FF" />
+    <path
+        android:pathData="M 68,66 A 2,2 0 1,1 68,70 A 2,2 0 1,1 68,66"
+        android:fillColor="#0B0F19" />
+
+    <!-- Headlight glow -->
+    <path
+        android:pathData="M 76,63 L 80,64"
         android:strokeColor="#FF2A6D"
-        android:strokeWidth="3"
+        android:strokeWidth="2"
         android:strokeLineCap="round" />
+
 </vector>

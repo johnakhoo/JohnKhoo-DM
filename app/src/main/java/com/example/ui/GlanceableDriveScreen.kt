@@ -392,13 +392,13 @@ fun HeaderTopBar(
                         ) {
                             Icon(
                                 imageVector = Icons.Default.ElectricCar,
-                                contentDescription = "Honda Prologue EV Splash",
+                                contentDescription = "JK DM EV Splash",
                                 tint = EvPrimaryCyan,
                                 modifier = Modifier.size(12.dp)
                             )
                             Spacer(modifier = Modifier.width(4.dp))
                             Text(
-                                text = "PROLOGUE EV",
+                                text = "JK DM EV",
                                 color = EvPrimaryCyan,
                                 fontSize = 10.sp,
                                 fontWeight = FontWeight.Bold
@@ -1605,7 +1605,7 @@ fun HondaPrologueSplashScreen(
                         modifier = Modifier.size(16.dp)
                     )
                     Text(
-                        text = "HONDA PROLOGUE EV",
+                        text = "JK DM EV",
                         color = EvPrimaryCyan,
                         fontSize = 12.sp,
                         fontWeight = FontWeight.Bold,
@@ -1615,7 +1615,7 @@ fun HondaPrologueSplashScreen(
             }
 
             Text(
-                text = "All-Electric SUV",
+                text = "John Khoo for DM",
                 color = EvTextPrimary,
                 fontSize = 28.sp,
                 fontWeight = FontWeight.ExtraBold,
