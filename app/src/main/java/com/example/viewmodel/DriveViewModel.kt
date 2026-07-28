@@ -86,17 +86,17 @@ class DriveViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun cycleFocusCardNext() {
-        _focusedCardIndex.value = (_focusedCardIndex.value + 1) % 7
+        _focusedCardIndex.value = (_focusedCardIndex.value + 1) % 8
         emitHaptic("Focus: Card ${_focusedCardIndex.value}")
     }
 
     fun cycleFocusCardPrevious() {
-        _focusedCardIndex.value = if (_focusedCardIndex.value == 0) 6 else _focusedCardIndex.value - 1
+        _focusedCardIndex.value = if (_focusedCardIndex.value == 0) 7 else _focusedCardIndex.value - 1
         emitHaptic("Focus: Card ${_focusedCardIndex.value}")
     }
 
     fun setFocusedCard(index: Int) {
-        if (index in 0..6) {
+        if (index in 0..7) {
             _focusedCardIndex.value = index
         }
     }
@@ -111,6 +111,7 @@ class DriveViewModel(application: Application) : AndroidViewModel(application) {
             4 -> toggleLock()
             5 -> togglePreconditioning()
             6 -> saveCurrentTripLog()
+            7 -> toggleHeadlights()
         }
         emitHaptic("D-Pad Select Executed")
     }

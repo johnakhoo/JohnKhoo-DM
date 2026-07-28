@@ -323,6 +323,22 @@ fun GlanceableDriveScreen(
                     )
                 }
             }
+
+            // CARD 7: Realtime 3D Filament Honda Prologue EV Viewport
+            item {
+                FocusableCardWrapper(
+                    cardIndex = 7,
+                    focusedIndex = focusedCardIndex,
+                    title = "Realtime 3D Filament Orbit Viewport",
+                    icon = Icons.Default.ElectricCar,
+                    onCardClick = { viewModel.setFocusedCard(7) }
+                ) {
+                    Filament3DCarWidget(
+                        vehicleState = vehicleState,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+            }
         }
 
         AnimatedVisibility(
