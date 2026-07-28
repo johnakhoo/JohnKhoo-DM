@@ -2,6 +2,8 @@
 
 A modern, connected electric vehicle (EV) companion Android application built with **Kotlin** and **Jetpack Compose**. Featuring a custom interactive 3D vector-rendered vehicle canvas with dynamic camera controls, real-time telematics monitoring, drive controls, climate settings, and local trip logging.
 
+🎬 **[Watch App Screen Recording Demo](https://youtube.com/shorts/dtgRJrL65bc)**
+
 ---
 
 ## 🌟 Key Features
