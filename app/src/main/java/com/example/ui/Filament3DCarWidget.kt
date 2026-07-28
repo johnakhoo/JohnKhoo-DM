@@ -720,7 +720,7 @@ private fun DrawScope.draw3DMidSizeCrossoverSUV(
     })
 
     // 5. FRONT DIAMOND/MATRIX GRILLE & FASCIA
-    val grilleDepth = (hoodFrontL.finalZ + hoodFrontR.finalZ + frontBumpR.finalZ + frontBumpL.finalZ) / 4f
+    val grilleDepth = (hoodFrontL.finalZ + hoodFrontR.finalZ + frontBumpR.finalZ + frontBumpL.finalZ) / 4f - 1f
     renderComponents.add(RenderComponent(grilleDepth) {
         val grillePath = Path().apply {
             moveTo(hoodFrontL.pt2d.x, hoodFrontL.pt2d.y)
@@ -758,7 +758,7 @@ private fun DrawScope.draw3DMidSizeCrossoverSUV(
     })
 
     // 6. SCULPTED HOOD & POWER DOMES
-    val hoodDepth = (hoodFrontL.finalZ + hoodFrontR.finalZ + hoodBackR.finalZ + hoodBackL.finalZ) / 4f
+    val hoodDepth = maxOf(hoodFrontL.finalZ, hoodFrontR.finalZ, (hoodFrontL.finalZ + hoodBackL.finalZ) / 2f + 2f, (hoodFrontR.finalZ + hoodBackR.finalZ) / 2f + 2f)
     renderComponents.add(RenderComponent(hoodDepth) {
         val hoodShade = calcShade(hoodFrontL.local, hoodFrontR.local, hoodBackL.local, paint.primaryColor)
         val hoodPath = Path().apply {
@@ -772,19 +772,39 @@ private fun DrawScope.draw3DMidSizeCrossoverSUV(
         }
         drawPath(hoodPath, hoodShade)
 
+        // Center Spine Power Dome
         val hoodCenterFront = projectPt(108f, -2f, 0f)
         val hoodCenterBack = projectPt(38f, -14f, 0f)
         drawLine(
-            color = paint.highlightColor.copy(alpha = 0.6f),
+            color = paint.highlightColor.copy(alpha = 0.7f),
             start = hoodCenterFront.pt2d,
             end = hoodCenterBack.pt2d,
-            strokeWidth = 1.8f
+            strokeWidth = 2.2f * scale
         )
-        drawPath(hoodPath, paint.highlightColor.copy(alpha = 0.4f), style = Stroke(width = 1.2f))
+
+        // Left & Right Hood Crease Character Lines
+        val creaseLeftFront = projectPt(100f, -4f, -22f)
+        val creaseLeftBack = projectPt(42f, -12f, -20f)
+        drawLine(
+            color = paint.highlightColor.copy(alpha = 0.5f),
+            start = creaseLeftFront.pt2d,
+            end = creaseLeftBack.pt2d,
+            strokeWidth = 1.6f * scale
+        )
+        val creaseRightFront = projectPt(100f, -4f, 22f)
+        val creaseRightBack = projectPt(42f, -12f, 20f)
+        drawLine(
+            color = paint.highlightColor.copy(alpha = 0.5f),
+            start = creaseRightFront.pt2d,
+            end = creaseRightBack.pt2d,
+            strokeWidth = 1.6f * scale
+        )
+
+        drawPath(hoodPath, paint.highlightColor.copy(alpha = 0.5f), style = Stroke(width = 1.5f))
     })
 
     // 7. WINDSHIELD
-    val windshieldDepth = (hoodBackL.finalZ + hoodBackR.finalZ + windshieldTopR.finalZ + windshieldTopL.finalZ) / 4f
+    val windshieldDepth = (hoodBackL.finalZ + hoodBackR.finalZ + windshieldTopR.finalZ + windshieldTopL.finalZ) / 4f + 0.5f
     renderComponents.add(RenderComponent(windshieldDepth) {
         val windshieldPath = Path().apply {
             moveTo(hoodBackL.pt2d.x, hoodBackL.pt2d.y)
@@ -801,7 +821,7 @@ private fun DrawScope.draw3DMidSizeCrossoverSUV(
     })
 
     // 8. ROOF & PANORAMIC GLASS
-    val roofDepth = (roofFrontL.finalZ + roofFrontR.finalZ + roofRearR.finalZ + roofRearL.finalZ) / 4f
+    val roofDepth = (roofFrontL.finalZ + roofFrontR.finalZ + roofRearR.finalZ + roofRearL.finalZ) / 4f + 1f
     renderComponents.add(RenderComponent(roofDepth) {
         val roofPath = Path().apply {
             moveTo(roofFrontL.pt2d.x, roofFrontL.pt2d.y)
@@ -819,7 +839,7 @@ private fun DrawScope.draw3DMidSizeCrossoverSUV(
     })
 
     // 9. ROOF SPOILER
-    val spoilerDepth = (roofRearL.finalZ + roofRearR.finalZ + spoilerR.finalZ + spoilerL.finalZ) / 4f
+    val spoilerDepth = (roofRearL.finalZ + roofRearR.finalZ + spoilerR.finalZ + spoilerL.finalZ) / 4f + 1.5f
     renderComponents.add(RenderComponent(spoilerDepth) {
         val spoilerPath = Path().apply {
             moveTo(roofRearL.pt2d.x, roofRearL.pt2d.y)
@@ -832,11 +852,12 @@ private fun DrawScope.draw3DMidSizeCrossoverSUV(
     })
 
     // 10. LEFT SIDE FLANK & WINDOWS
-    val leftFlankDepth = (hoodFrontL.finalZ + roofRearL.finalZ + rearBumpL.finalZ + sillL.finalZ) / 4f
+    val leftFlankDepth = (hoodFrontL.finalZ + roofRearL.finalZ + rearBumpL.finalZ + sillL.finalZ) / 4f - 2f
     renderComponents.add(RenderComponent(leftFlankDepth) {
         val leftFlankShade = calcShade(Pt3D(115f, 18f, -50f), Pt3D(-115f, 16f, -50f), Pt3D(0f, -48f, -50f), paint.primaryColor)
         val leftFlankPath = Path().apply {
             moveTo(hoodFrontL.pt2d.x, hoodFrontL.pt2d.y)
+            lineTo(hoodMidL.pt2d.x, hoodMidL.pt2d.y)
             lineTo(hoodBackL.pt2d.x, hoodBackL.pt2d.y)
             lineTo(roofRearL.pt2d.x, roofRearL.pt2d.y)
             lineTo(hatchMidL.pt2d.x, hatchMidL.pt2d.y)
@@ -878,11 +899,12 @@ private fun DrawScope.draw3DMidSizeCrossoverSUV(
     })
 
     // 11. RIGHT SIDE FLANK & WINDOWS
-    val rightFlankDepth = (hoodFrontR.finalZ + roofRearR.finalZ + rearBumpR.finalZ + sillR.finalZ) / 4f
+    val rightFlankDepth = (hoodFrontR.finalZ + roofRearR.finalZ + rearBumpR.finalZ + sillR.finalZ) / 4f - 2f
     renderComponents.add(RenderComponent(rightFlankDepth) {
         val rightFlankShade = calcShade(Pt3D(115f, 18f, 50f), Pt3D(0f, -48f, 50f), Pt3D(-115f, 16f, 50f), paint.primaryColor)
         val rightFlankPath = Path().apply {
             moveTo(hoodFrontR.pt2d.x, hoodFrontR.pt2d.y)
+            lineTo(hoodMidR.pt2d.x, hoodMidR.pt2d.y)
             lineTo(hoodBackR.pt2d.x, hoodBackR.pt2d.y)
             lineTo(roofRearR.pt2d.x, roofRearR.pt2d.y)
             lineTo(hatchMidR.pt2d.x, hatchMidR.pt2d.y)
@@ -1025,47 +1047,60 @@ private fun DrawScope.draw3DMidSizeCrossoverSUV(
     // 13. HEADLIGHTS & FRONT LIGHTBAR
     val headL = projectPt(109f, 2f, -38f)
     val headR = projectPt(109f, 2f, 38f)
-    val headDepth = (headL.finalZ + headR.finalZ) / 2f
-    renderComponents.add(RenderComponent(headDepth + 1f) {
+    val headDepth = maxOf(headL.finalZ, headR.finalZ, grilleDepth + 2f, hoodDepth + 2f)
+    renderComponents.add(RenderComponent(headDepth) {
         if (headlightsOn || hazardOn) {
             drawCircle(
                 brush = Brush.radialGradient(
                     colors = listOf(Color.White, Color(0xFF00E5FF), Color.Transparent),
                     center = headL.pt2d,
-                    radius = 32f
+                    radius = 35f * scale
                 ),
                 center = headL.pt2d,
-                radius = 32f
+                radius = 35f * scale
             )
             drawCircle(
                 brush = Brush.radialGradient(
                     colors = listOf(Color.White, Color(0xFF00E5FF), Color.Transparent),
                     center = headR.pt2d,
-                    radius = 32f
+                    radius = 35f * scale
                 ),
                 center = headR.pt2d,
-                radius = 32f
+                radius = 35f * scale
             )
         }
+
+        // Connecting Cyber Lightbar
         drawLine(
             color = if (headlightsOn) Color(0xFF00E5FF) else Color(0xDD80E5FF),
             start = headL.pt2d,
             end = headR.pt2d,
             strokeWidth = 3.5f * scale
         )
+
+        // Dual LED Projector Lens Pods
+        drawCircle(color = Color(0xFFE0F7FF), radius = 4f * scale, center = headL.pt2d)
+        drawCircle(color = Color(0xFF00E5FF), radius = 2.5f * scale, center = headL.pt2d)
+        drawCircle(color = Color(0xFFFFFFFF), radius = 1.2f * scale, center = headL.pt2d)
+
+        drawCircle(color = Color(0xFFE0F7FF), radius = 4f * scale, center = headR.pt2d)
+        drawCircle(color = Color(0xFF00E5FF), radius = 2.5f * scale, center = headR.pt2d)
+        drawCircle(color = Color(0xFFFFFFFF), radius = 1.2f * scale, center = headR.pt2d)
     })
 
     // 14. REAR TAIL LIGHTBAR
     val tailL = projectPt(-112f, 2f, -42f)
     val tailR = projectPt(-112f, 2f, 42f)
-    val tailDepth = (tailL.finalZ + tailR.finalZ) / 2f
-    renderComponents.add(RenderComponent(tailDepth + 1f) {
+    val tailDepth = maxOf(tailL.finalZ, tailR.finalZ, rearHatchDepth + 2f, rearBumperDepth + 2f)
+    renderComponents.add(RenderComponent(tailDepth) {
         drawLine(
             color = Color(0xFFFF2A55),
             start = tailL.pt2d,
             end = tailR.pt2d,
             strokeWidth = 3.5f * scale
         )
+        drawCircle(color = Color(0xFFFF5577), radius = 3f * scale, center = tailL.pt2d)
+        drawCircle(color = Color(0xFFFF5577), radius = 3f * scale, center = tailR.pt2d)
     })
 
     // 15. CHARGING PORT INDICATOR
